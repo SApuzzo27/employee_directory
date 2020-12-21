@@ -16,9 +16,11 @@ function UserTable({ results, sort }) {
 
         const user = {
          name: results[i].name.first + " " + results[i].name.last,
+         location: results[i].location.city + "," + results[i].location.state,
          gender: results[i].gender,
          age: results[i].dob.age,
-         email: results[i].email
+         email: results[i].email,
+         picture: results[i].picture.medium
         }
 
         usersArray.push(user);
@@ -42,13 +44,26 @@ function UserTable({ results, sort }) {
 
         for (let i = 0; i < usersArray.length; i++) {
 
-           const name = usersArray[i].name;
-           const gender = usersArray[i].gender;
-           const age = usersArray[i].age;
-           const email = usersArray[i].email;
+          const name = usersArray[i].name;
+          const location = usersArray[i].location
+          const gender = usersArray[i].gender;
+          const age = usersArray[i].age;
+          const email = usersArray[i].email;
+          const photo = usersArray[i].picture
+        
 
-            tableItems.push(<tr key={i}><th>{i}</th><th>{name}</th><th>{gender}</th><th>{age}</th><th>{email}</th></tr>)
+            tableItems.push(
+            <tr key={i}>
+              <th>{i}</th>
+              <th>{name}</th>
+              <th>{location}</th>
+              <th>{gender}</th>
+              <th>{age}</th>
+              <th>{email}</th>
+              <th><img src={photo} class="photo" alt="profile" /></th>
+                </tr>)
         }
+
 
         console.log(tableItems);
 
@@ -58,9 +73,11 @@ function UserTable({ results, sort }) {
           <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Location</th>
             <th>Gender</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Headshot</th>
           </tr>
         </thead>
         <tbody>
@@ -79,13 +96,26 @@ function UserTable({ results, sort }) {
 
         for (let i = 0; i < usersArray.length; i++) {
 
-           const name = usersArray[i].name;
-           const gender = usersArray[i].gender;
-           const age = usersArray[i].age;
-           const email = usersArray[i].email;
+          const name = usersArray[i].name;
+          const location = usersArray[i].location
+          const gender = usersArray[i].gender;
+          const age = usersArray[i].age;
+          const email = usersArray[i].email;
+          const photo = usersArray[i].picture
+        
 
-            tableItems.push(<tr key={i}><th>{i}</th><th>{name}</th><th>{gender}</th><th>{age}</th><th>{email}</th></tr>)
+            tableItems.push(
+            <tr key={i}>
+              <th>{i}</th>
+              <th>{name}</th>
+              <th>{location}</th>
+              <th>{gender}</th>
+              <th>{age}</th>
+              <th>{email}</th>
+              <th><img src={photo} class="photo" alt="profile" /></th>
+                </tr>)
         }
+
 
         console.log(tableItems);
 
@@ -95,10 +125,12 @@ function UserTable({ results, sort }) {
           <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Location</th>
             <th>Gender</th>
             <th>Age</th>
             <th>Email</th>
-          </tr>
+            <th>Headshot</th>
+            </tr>
         </thead>
         <tbody>
             {tableItems}           
@@ -110,23 +142,40 @@ function UserTable({ results, sort }) {
 
         for (let i = 0; i < usersArray.length; i++) {
 
-           const name = usersArray[i].name;
-           const gender = usersArray[i].gender;
-           const age = usersArray[i].age;
-           const email = usersArray[i].email;
+          const name = usersArray[i].name;
+          const location = usersArray[i].location
+          const gender = usersArray[i].gender;
+          const age = usersArray[i].age;
+          const email = usersArray[i].email;
+          const photo = usersArray[i].picture
+        
 
-            tableItems.push(<tr key={i}><th>{i}</th><th>{name}</th><th>{gender}</th><th>{age}</th><th>{email}</th></tr>)
+            tableItems.push(
+            <tr key={i}>
+              <th>{i}</th>
+              <th>{name}</th>
+              <th>{location}</th>
+              <th>{gender}</th>
+              <th>{age}</th>
+              <th>{email}</th>
+              <th><img src={photo} class="photo" alt="profile" /></th>
+                </tr>)
         }
 
-    return ( <div>
-        <Table striped bordered hover>
+
+        console.log(tableItems);
+
+        return (<div>
+         <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Location</th>
             <th>Gender</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Headshot</th>
           </tr>
         </thead>
         <tbody>
